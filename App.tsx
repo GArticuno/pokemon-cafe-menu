@@ -1,20 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+
+import { ActivityIndicator } from 'react-native';
+
+import Routes from './src/routes';
 
 export default function App() {
+  // Copyright (c) 2013 by Andriy Konstantynov. All rights reserved. Visit http://www.onlinewebfonts.com
+  const [fontsLoaded] = useFonts({
+    'Espuma-Bold': require('./src/assets/fonts/Espuma-Bold.otf'),
+    'Espuma-Regular': require('./src/assets/fonts/Espuma-Regular.ttf'),
+  });
+
+  if(!fontsLoaded) {
+    return <ActivityIndicator />;
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar translucent />
+      <Routes />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
