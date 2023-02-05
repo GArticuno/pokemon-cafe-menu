@@ -12,14 +12,14 @@ import type { OfferingProps, ResponseProps } from "./types";
 
 export const Offerings = () => {
   const [data, setData] = useState<OfferingProps[]>([]);
-  const { navigate } = useNavigation<NavigationProp<RoutesOfferStack>>()
+  const { navigate } = useNavigation<NavigationProp<RoutesOfferStack>>();
 
   const getOfferings = async () => {
     try {
       const response = await api.get<ResponseProps>('/Offerings?order=name');
       setData(response.data.results);
     } catch(err: any) {
-      console.log(err)
+      console.log(err);
     }
   };
 

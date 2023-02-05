@@ -11,21 +11,24 @@ module.exports = {
     backgroundColor: "#FFEEDE"
   },
   updates: {
-    "fallbackToCacheTimeout": 0
+    fallbackToCacheTimeout: 0,
+    url: "https://u.expo.dev/86236b36-6d42-4bf9-a9e7-2150ddd5acfd"
   },
   assetBundlePatterns: [
     "**/*"
   ],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.moonbeam.pokemoncafemenu"
+    bundleIdentifier: "com.moonbeam.pokemoncafemenu",
+    buildNumber: "1"
   },
   android: {
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#FFEEDE"
     },
-    package: "com.moonbeam.pokemoncafemenu"
+    package: "com.moonbeam.pokemoncafemenu",
+    versionCode: 1
   },
   web: {
     favicon: "./assets/favicon.png"
@@ -36,5 +39,8 @@ module.exports = {
     eas: {
       projectId: "86236b36-6d42-4bf9-a9e7-2150ddd5acfd"
     }
+  },
+  runtimeVersion: {
+    policy: "sdkVersion"
   }
 }
