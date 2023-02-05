@@ -18,7 +18,7 @@ export const Offerings = () => {
     try {
       const response = await api.get<ResponseProps>('/Offerings?order=name');
       setData(response.data.results);
-    } catch(err) {
+    } catch(err: any) {
       console.log(err)
     }
   };
